@@ -116,7 +116,7 @@ function addCardToDealerContainer(jsCard){
   let name = jsCard.name;
   let hiddenName = jsCard.hiddenName;
   const card = document.createElement('img')
-  card.setAttribute('src', './game-images/deck-of-cards/' + name + '.svg')
+  card.setAttribute('src', './img/deck/' + name + '.svg')
   card.setAttribute('alt', name);
   card.setAttribute('class', 'card');
   card.setAttribute('id', hiddenName);
@@ -128,7 +128,7 @@ function addCardToPlayerContainer(jsCard){
   let name = jsCard.name;
   let hiddenName = jsCard.hiddenName;
   const card = document.createElement('img')
-  card.setAttribute('src', './game-images/deck-of-cards/' + name + '.svg')
+  card.setAttribute('src', './img/deck/' + name + '.svg')
   card.setAttribute('alt', name);
   card.setAttribute('class', 'card');
   card.setAttribute('id', hiddenName);
@@ -139,6 +139,6 @@ function updateCardToVisible() {
   const cardOne = aDealer.dealerHand[0];
   cardOne.makeVisible();
   const cardOneElement = document.getElementById(cardOne.name); 
-  cardOneElement.src = './game-images/deck-of-cards/' + cardOne.name + '.svg';
+  cardOneElement.src = './img/deck/' + cardOne.name + '.svg';
   cardOneElement.alt = 'cardOne.name';
 }
