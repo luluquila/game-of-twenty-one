@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Game of Twenty One</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+    <div id="root" class="root">
+
+        <div id="board" class="board">
+            <div id="header" class="header">
+                <h1 class="game-title">Game of 21</h1>
+                <button id="start" class="start-button game-button">Start</button>
+                <div class="clear-float"></div>
+            </div>
+
+            <div id="dealer" class="cards-container"></div>
+
+            <div id = "player-choice" class="player-choice">
+
+                <button id="hit" class="game-button">Hit</button>
+                <button id="stand" class="game-button">Stand</button>
+
+            </div>
+
+            <div id="player" class="cards-container"></div>
+
+
+        </div>
+
+
+    </div>
+
+    <script src="sandbox.js"></script>
+    <script src="Deck.js"></script>
+    <script src="Card.js"></script>
+    <script src="Dealer.js"></script>
+    <script src="Player.js"></script>
+    <script src="MyTools.js"></script>
+</body>
+</html>
