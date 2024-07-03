@@ -53,6 +53,8 @@ function handleHitClick() {
 function handleStandClick(){
   console.log("Stand button clicked");
 
+  freezeButtons();
+
   aDealer.hitAllDealerCards(aDeck);
   
   showAllDealerCards(aDealer.dealerHand);
@@ -66,6 +68,17 @@ message.setAttribute('class', 'message');
 message.innerText = 'Opss... that makes it above 21!';
 board.appendChild(message);
 message.style.opacity = '1.0';
+}
+
+function freezeButtons(){
+  hitButton.disabled = true;
+  hitButton.style.opacity = 0.6;
+  hitButton.style.cursor = 'not-allowed';
+
+  standButton.disabled = true;
+  standButton.style.opacity = 0.6;
+  standButton.style.cursor = 'not-allowed';
+
 }
 
 function showAllDealerCards(dealerHand) {
