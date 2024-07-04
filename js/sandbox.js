@@ -11,12 +11,22 @@ const standButton = document.getElementById('stand');
 const dealerCards = document.getElementById('dealer');
 const playerCards = document.getElementById('player');
 const header = document.getElementById('header');
+const resultBox = document.getElementById('result-box');
+const closeButton = document.getElementById('close');
+const aboveTwentyOne = document.getElementById('above-21');
+const aboveTwentyOneHeader = document.getElementById('above-21-header');
 
 startButton.addEventListener('click', handleStartClick);
 
 hitButton.addEventListener('click', handleHitClick);
 
 standButton.addEventListener('click', handleStandClick);
+
+// what
+closeButton.addEventListener('click', (event) => {
+  event.preventDefault();
+  resultBox.close();
+});
 
 
 function handleStartClick() {
@@ -59,15 +69,30 @@ function handleStandClick(){
   
   showAllDealerCards(aDealer.dealerHand);
 
+  //const myTimeout = setTimeout(showResultBox, 5000); (see setinterval on 'showAllDealerCards')
+
+}
+
+function showResultBox(){
+  resultBox.showModal();
 }
 
 function playerWentAboveTwentyOne() {
+  aboveTwentyOne.showModal();
+  aboveTwentyOneHeader.style.opacity = '1.0';
 
-const message = document.createElement('div');
-message.setAttribute('class', 'message');
-message.innerText = 'Opss... that makes it above 21!';
-board.appendChild(message);
-message.style.opacity = '1.0';
+  let indexForMyFunctionInterval = 0;
+  const myFunction = setInterval(()=>{
+    if (indexForMyFunctionInterval == 0) {
+      aboveTwentyOneHeader.style.opacity = '0.0';
+      indexForMyFunctionInterval++;
+    } else {
+      aboveTwentyOne.close();
+      handleStandClick();
+      clearInterval(myFunction);
+    }
+  }, 2000);
+
 }
 
 function freezeButtons(){
@@ -93,6 +118,7 @@ function showAllDealerCards(dealerHand) {
       addCardToDealerContainer(dealerHand[dealerCardIndex]);
       dealerCardIndex++;
     } else {
+      setTimeout(showResultBox, 2000);
       clearInterval(myFunction);
     }
   }, 500);
