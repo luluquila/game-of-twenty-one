@@ -72,8 +72,6 @@ function handleStandClick(){
   
   showAllDealerCards(aDealer.dealerHand);
 
-  //const myTimeout = setTimeout(showResultBox, 5000); (see setinterval on 'showAllDealerCards')
-
 }
 
 function showResultBox(){

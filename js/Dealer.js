@@ -36,8 +36,6 @@ class Dealer {
 
 
     hitAllDealerCards(aDeck){
-        // const cardOne = this.dealerHand[0];
-        // cardOne.makeVisible();
 
         MyTools.ifAceShouldAceChange(this, this.dealerHand);
 

@@ -39,16 +39,11 @@ class Deck {
 
 
         return this.deckOfCards;
-        //do I need a return?
     }
 
     drawOneCard() {
         const card = this.deckOfCards.pop();
         return card;
-    }
-
-    resetDeck() {
-        // call constructor...??
     }
 
     numberOfCards() {
