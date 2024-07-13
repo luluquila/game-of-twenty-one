@@ -34,9 +34,18 @@
         </dialog>
 
         <dialog id="result-box" class="result-box">
-            <div>
-                Hello world
-                <div id="close" class="start-button game-button">X</div>
+            <div class="grid-container">
+                <h1>Results</h1>
+                <div class="table-of-results">
+                    <h3 class="table-of-results-header">Your sum: </h3>
+                    <h3 id="show-player-sum" class="table-of-results-numbers"></h3>
+                    <h3 class="table-of-results-header" >Dealer's sum: </h3>
+                    <h3 id="show-dealer-sum" class="table-of-results-numbers"></h3>
+
+                </div>
+                <h2 id="show-result-message"></h2>
+                <div class="play-again-div"><button id="play-again" class=" play-again-button start-button game-button">Play Again</button></div>
+                <!-- <div id="close" class="start-button game-button">Play Again</div> -->
 
             </div>
         </dialog>

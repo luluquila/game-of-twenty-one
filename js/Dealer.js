@@ -48,17 +48,15 @@ class Dealer {
     }
 
     showResults(playerSum, dealerSum) {
-        console.log("Player's Total Sum: ", playerSum);
-        console.log("Dealer's Total Sum: ", dealerSum);
 
         if (playerSum <= 21 && (playerSum > dealerSum || dealerSum > 21)) {
-            console.log("You won! It seems that you are in luck today!");
+            return "You won! It seems that you are in luck today!";
         } else if (dealerSum <= 21 && (dealerSum > playerSum || playerSum > 21)) {
-            console.log("The dealer won! Sorry player, you are not in luck...");
+            return "The dealer won! Sorry player, you are not in luck...";
         } else if (dealerSum === playerSum && dealerSum <= 21) {
-            console.log("It's a tie!");
+            return"It's a tie!";
         } else {
-            console.log("Both went above 21, nobody won!")
+            return "Both went above 21, nobody won!";
         }
 
     }

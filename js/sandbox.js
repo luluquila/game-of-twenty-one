@@ -12,9 +12,12 @@ const dealerCards = document.getElementById('dealer');
 const playerCards = document.getElementById('player');
 const header = document.getElementById('header');
 const resultBox = document.getElementById('result-box');
-const closeButton = document.getElementById('close');
+const playAgainButton = document.getElementById('play-again');
 const aboveTwentyOne = document.getElementById('above-21');
 const aboveTwentyOneHeader = document.getElementById('above-21-header');
+const showPlayerSum = document.getElementById('show-player-sum');
+const showDealerSum = document.getElementById('show-dealer-sum');
+const showResultMessage = document.getElementById('show-result-message');
 
 startButton.addEventListener('click', handleStartClick);
 
@@ -22,10 +25,12 @@ hitButton.addEventListener('click', handleHitClick);
 
 standButton.addEventListener('click', handleStandClick);
 
+
 // what
-closeButton.addEventListener('click', (event) => {
+playAgainButton.addEventListener('click', (event) => {
   event.preventDefault();
   resultBox.close();
+  location.reload();
 });
 
 
@@ -44,8 +49,14 @@ function handleStartClick() {
   restartButton.innerText = 'Restart';
 
   header.replaceChild(restartButton, startButton);
+
+  // restartButton.addEventListener('click', handleRestartClick());
  
 }
+
+// function handleRestartClick() {
+//   location.reload();
+// }
 
 
 function handleHitClick() {
@@ -74,6 +85,10 @@ function handleStandClick(){
 }
 
 function showResultBox(){
+  showPlayerSum.innerHTML = aPlayer.sumOfCards;
+  showDealerSum.innerHTML = aDealer.sumOfCards;
+  showResultMessage.innerHTML = aDealer.showResults(aPlayer.sumOfCards, aDealer.sumOfCards);
+
   resultBox.showModal();
 }
 
