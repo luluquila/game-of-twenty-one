@@ -30,6 +30,7 @@ class Dealer {
     hitPlayer(aPlayer, aDeck) {
         const card = aDeck.drawOneCard();
         aPlayer.addCardToPlayerHand(card);
+        MyTools.ifAceShouldAceChange(aPlayer, aPlayer.playerHand);
         return card;
     }
 
