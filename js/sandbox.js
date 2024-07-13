@@ -43,20 +43,12 @@ function handleStartClick() {
   aDealer.dealCards(aDeck, aPlayer);
   showInitialDealtCardsInContainers(aPlayer.playerHand, aDealer.dealerHand);
 
-  const restartButton = document.createElement('button');
-  restartButton.setAttribute('id', 'restart');
-  restartButton.setAttribute('class', 'start-button game-button');
-  restartButton.innerText = 'Restart';
-
-  header.replaceChild(restartButton, startButton);
-
-  // restartButton.addEventListener('click', handleRestartClick());
+  startButton.disabled = true;
+  startButton.style.opacity = 0.6;
+  startButton.style.cursor = 'not-allowed';
  
 }
 
-// function handleRestartClick() {
-//   location.reload();
-// }
 
 
 function handleHitClick() {
